@@ -15,6 +15,7 @@
 
 ## usage
 - sh build.sh \<jdk version> \<ImageTag>
+- jdk 支持：jdk8 jdk11 jdk17 jdk21
 - Image Tag格式: <镜像名>:<标签>
 - 标签可省略，默认为latest
 
