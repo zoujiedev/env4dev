@@ -16,8 +16,11 @@
 - build.sh
 
 ## usage
+- sh build.sh \<jdk version> \<ImageTag>
+- Image Tag格式: <镜像名>:<标签>
+- 标签可省略，默认为latest
 
 ```bash
-sh build.sh jdk8 [maven version]
+sh build.sh jdk8 buildenv:jdk8
 ```
 
