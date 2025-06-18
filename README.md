@@ -19,7 +19,26 @@
 - Image Tag格式: <镜像名>:<标签>
 - 标签可省略，默认为latest
 
+构建环境镜像
 ```bash
 sh build.sh jdk8 buildenv:jdk8
 ```
 
+编译项目
+```bash
+docker run -it --rm \
+    -v /path/to/youproject:/workspace \ #映射工作路径
+    -v /path/to/yoursettings.xml:/root/.m2/settings.xml \  #映射maven配置文件(可选)
+    -v /path/to/yourlocalrepository:/root/.m2/repository \ #映射maven本地仓库(可选)
+    <Image Tag>
+```
+
+进入容器交互bash终端后
+```bash
+cd /workspace
+```
+即可看到外部宿主机共享的项目，从而进行编译
+如：
+```bash
+mvn clean package
+```
